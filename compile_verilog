@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Specify the Verilog files here
+FILES="testbench.v system.v monitors.v utils.v nexys4.v \
+       proc_fpga.v mmiocontrol.v vgacontrol.v iocontrol.v io_ssd.v imemcntl.v imemories.v \
+       regfile2.v mux.v cop.v"
+
+echo vcs $FILES -o simv $*
+vcs $FILES -v2005 -debug -full64 -o simv +cli $*
